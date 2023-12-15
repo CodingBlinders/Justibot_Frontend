@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 87vh;
+  max-height: 88vh;
   border: 1px solid #343a40; 
   padding: 20px;
   border-radius: 8px;
