@@ -30,7 +30,7 @@ const Sidebar = () => {
             <span className="d-none d-sm-inline mx-1">Joe</span>
           </a>
           <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a className="dropdown-item" href="#">New project...</a></li>
+            <li><a className="dropdown-item" href="#">New chat...</a></li>
             <li><a className="dropdown-item" href="#">Settings</a></li>
             {/* ... Other dropdown items */}
           </ul>

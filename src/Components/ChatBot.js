@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../Styles/ChatBot.css';
 
 const ChatBot = () => {
   const [messages, setMessages] = useState([]);
@@ -36,6 +35,12 @@ const ChatBot = () => {
     }
   };
 
+  const clearChat = () => {
+    localStorage.removeItem('chatMessages');
+    setMessages([]); 
+  };
+  
+
   return (
     <div className="chat-container">
       <div className="messages">
@@ -54,6 +59,9 @@ const ChatBot = () => {
         />
         <button type="submit">Send</button>
       </form>
+      {/* <button className="clear-chat" onClick={clearChat}>
+        Clear Chat 
+      </button> */}
     </div>
   );
 };
