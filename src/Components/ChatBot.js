@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import LadyOfJustice from '../Assets/Images/ladyofjustice.png';
+
 
 const ChatBot = () => {
+  const initialMessage = {
+    text: "Welcome! I'm JustiBot. Feel free to start the conversation.",
+    isUser: false,
+  };
+
+  const [showIntro, setShowIntro] = useState(true);
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -9,6 +17,15 @@ const ChatBot = () => {
       setMessages(savedMessages);
     }
   }, []);
+
+  // useEffect(() => {
+  //   if (showIntro) {
+  //     setTimeout(() => {
+  //       setShowIntro(false);
+  //       setMessages([]);
+  //     }, 3000); // Change the duration as needed (e.g., 3000ms for 3 seconds)
+  //   }
+  // }, [showIntro]);
 
   const [userInput, setUserInput] = useState('');
 
@@ -25,6 +42,7 @@ const ChatBot = () => {
       localStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
       setMessages(updatedMessages);
       setUserInput('');
+      if(showIntro) setShowIntro(false);
 
       setTimeout(() => {
         const botMessage = { text: 'I am an AI and this is a sample response.', isUser: false };
@@ -37,13 +55,21 @@ const ChatBot = () => {
 
   const clearChat = () => {
     localStorage.removeItem('chatMessages');
-    setMessages([]); 
+    setMessages([]);
+    if(!showIntro) setShowIntro(true);
   };
-  
 
   return (
     <div className="chat-container">
       <div className="messages">
+      {showIntro && (
+          <div className="intro">
+            <img src={LadyOfJustice} alt="Logo" />
+            <div className="intro-text">
+              <p>{initialMessage.text}</p>
+            </div>
+          </div>
+      )}
         {messages.map((message, index) => (
           <div key={index} className={message.isUser ? 'user-message' : 'bot-message'}>
             {message.text}
@@ -59,9 +85,10 @@ const ChatBot = () => {
         />
         <button type="submit">Send</button>
       </form>
-      {/* <button className="clear-chat" onClick={clearChat}>
-        Clear Chat 
-      </button> */}
+      
+      <button className="clear-chat" onClick={clearChat}>
+        New Chat 
+      </button>
     </div>
   );
 };
