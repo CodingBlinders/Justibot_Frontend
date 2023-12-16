@@ -1,11 +1,16 @@
-import './App.css';
+
 import HomePage from './Pages/HomePage';
+import {NextUIProvider} from "@nextui-org/react";
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <HomePage />
-    </div>
+    <NextUIProvider>
+      <div className="App">
+        <HomePage />
+      </div>
+    </NextUIProvider>
+    
   );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LadyOfJustice from '../Assets/Images/ladyofjustice.png';
+import {Button, ButtonGroup} from "@nextui-org/react";
 
 
 const ChatBot = () => {
@@ -83,12 +84,12 @@ const ChatBot = () => {
           onChange={handleUserInput}
           placeholder="Type your message..."
         />
-        <button type="submit">Send</button>
+        <Button color="primary" variant="ghost" type="submit">Send</Button>
       </form>
       
-      <button className="clear-chat" onClick={clearChat}>
+      <Button color="primary" variant="ghost" className="clear-chat" onClick={clearChat}>
         New Chat 
-      </button>
+      </Button>
     </div>
   );
 };
