@@ -85,8 +85,16 @@ button{
   margin-bottom: 10px;
 }
 
+.initial{
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+
+}
+
 .intro img {
-  width:400px;
+  width:300px;
+  height: 300px;
   justify-self: center;
   align-self: center; 
 }

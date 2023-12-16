@@ -1,4 +1,5 @@
 import React from 'react';
+import justibot from '../Assets/Images/justibot.png';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -9,7 +10,8 @@ const Sidebar = () => {
     <div className="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top">
       <div className="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
         <a href="/" className="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <span className="fs-5">Justi<span className="d-none d-sm-inline">Bot</span></span>
+          <img src={justibot} alt="Logo" width="auto" height="30"/>
+          {/* <span className="fs-5">Justi<span className="d-none d-sm-inline">Bot</span></span> */}
         </a>
         <ul className="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
           <li className="nav-item">

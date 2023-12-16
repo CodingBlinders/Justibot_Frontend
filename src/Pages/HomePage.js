@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import {Button, ButtonGroup} from "@nextui-org/react";
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -11,8 +13,7 @@ import Footer from '../Components/Footer';
 const HomePage = () => {
   return (
     <div className="container-fluid overflow-hidden">
-      <div className="row vh-100 overflow-auto">
-        
+      <div className="row vh-100 overflow-auto">   
         <Sidebar />
         <div className="col d-flex flex-column h-sm-100"> 
           <ChatBot />
