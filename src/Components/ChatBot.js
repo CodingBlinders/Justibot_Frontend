@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+
+import Format from './Format';
 import LadyOfJustice from '../Assets/Images/ladyofjustice.png';
 import logo from '../Assets/Images/justibot-only-logo.png';
 import {Button, ButtonGroup} from "@nextui-org/react";
@@ -24,6 +26,7 @@ const ChatBot = () => {
   useEffect(() => {
     const savedMessages = JSON.parse(localStorage.getItem('chatMessages'));
     if (savedMessages) {
+      setShowIntro(false);
       setMessages(savedMessages);
     }
   }, []);
@@ -42,8 +45,6 @@ const ChatBot = () => {
   const handleUserInput = (e) => {
     setUserInput(e.target.value);
   };
-
-  // ... (previous code remains unchanged)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -85,6 +86,26 @@ const ChatBot = () => {
     }
   };
 
+  const handleSubmitHard = (e) => {
+    e.preventDefault();
+    if (userInput.trim() !== '') {
+      const userMessage = { text: userInput, isUser: true };
+
+      const updatedMessages = [...messages, userMessage];
+      localStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
+      setMessages(updatedMessages);
+      setUserInput('');
+      if(showIntro) setShowIntro(false);
+
+      setTimeout(() => {
+        const botMessage = { text: 'Title: Certificates and solemnization of marriages upon alteration of divisions\n Law sections and its subsections related"<br>" to question: Section 4 ([8, 22 of 1955]), Section 10 ([10, 22 of 1946]), Section 14 ([7, 34 of 1946]) and Section 28 ([7, of 1944])\n Answer: For a marriage certificate to be issued by a district registrar from the old or new division when an area undergoes a transition as outlined in Law [7, of 1944] Section 28, a marriage must be solemnized in pursuance of Section 33 of the law without any of the preliminaries prescribed by Sections 4 and 10. The required acts must be done by a District Registrar of the old division or the new division nominated by the District Registrar within the District, and the Registrar-General must periodically publish a list of Registrars of Marriages in Sri Lanka, and the buildings they administer, as laid down by Section 14 ([7, 34 of 1946]).\n Conclusion: In conclusion', isUser: false };
+        const updatedMessagesWithBot = [...updatedMessages, botMessage];
+        localStorage.setItem('chatMessages', JSON.stringify(updatedMessagesWithBot));
+        setMessages(updatedMessagesWithBot);
+      }, 500);
+    }
+  };
+
 
 
   const clearChat = () => {
@@ -119,8 +140,11 @@ const ChatBot = () => {
         )}
         {messages.map((message, index) => (
           <div key={index} className={message.isUser ? 'user-message' : 'bot-message'}>
-            {(message.text)
-            }
+            {message.isUser ? (
+              message.text // Render user's message as plain text
+            ) : (
+              <Format text={message.text} /> // Render bot's response using the ChatResponse component
+            )}
           </div>
         ))}
       </div>
@@ -136,8 +160,8 @@ const ChatBot = () => {
           <VscSend color="white" size="25 px" />
         </Button>
       </form>
-      
-      {/* <Button color="primary" variant="ghost" className="clear-chat" onClick={clearChat}>
+{/*       
+      <Button color="primary" variant="ghost" className="clear-chat" onClick={clearChat}>
         New Chat 
       </Button> */}
     </div>
