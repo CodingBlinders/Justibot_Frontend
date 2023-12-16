@@ -9,6 +9,13 @@ const ChatBot = () => {
     isUser: false,
   };
 
+  const prompts = [
+    "What are the legal implications of intellectual property rights?",
+    "Explain the concept of 'due process' in the legal system.",
+    "Discuss the differences between civil law and criminal law.",
+    "How does contract law work in different business scenarios?"
+  ];
+
   const [showIntro, setShowIntro] = useState(true);
   const [messages, setMessages] = useState([]);
 
@@ -67,10 +74,21 @@ const ChatBot = () => {
           <div className="intro">
             <img src={LadyOfJustice} alt="Logo" />
             <div className="intro-text">
-              <p>{initialMessage.text}</p>
+              <p className="initial">{initialMessage.text}</p>
+              <div className="row row-cols-1 row-cols-md-2 g-4">
+                {prompts.map((prompt, index) => (
+                  <div key={index} className="col">
+                    <div className="card bg-dark">
+                      <div className="card-body text-white">
+                        {prompt}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-      )}
+        )}
         {messages.map((message, index) => (
           <div key={index} className={message.isUser ? 'user-message' : 'bot-message'}>
             {message.text}
@@ -87,9 +105,9 @@ const ChatBot = () => {
         <Button color="primary" variant="ghost" type="submit">Send</Button>
       </form>
       
-      <Button color="primary" variant="ghost" className="clear-chat" onClick={clearChat}>
+      {/* <Button color="primary" variant="ghost" className="clear-chat" onClick={clearChat}>
         New Chat 
-      </Button>
+      </Button> */}
     </div>
   );
 };
