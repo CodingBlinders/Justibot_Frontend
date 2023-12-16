@@ -1,5 +1,5 @@
 body {
-  background-color: #1c76d1; /* Dark color matching footer */
+  background-color: #343a40 !important; 
 }
 
 .chat-container {
@@ -12,7 +12,7 @@ body {
   border-radius: 8px;
   margin-top: 20px;
   margin-bottom: 10px;
-  background-color: #343a40; 
+  background-color: #212529;; 
   color: #fff; 
   overflow-y: scroll ;
 }
