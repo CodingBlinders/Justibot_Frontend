@@ -58,21 +58,8 @@ input[type="text"] {
 
 button{
   border-radius: 6px;
+  padding: 10px 14px;
 }
-
-/* button {
-  padding: 10px 16px;
-  border: none;
-  border-radius: 10px !important;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-} */
-
-/* button:hover {
-  background-color: #0056b3;
-} */
 
 .clear-chat {
   margin-top: 5px !important;

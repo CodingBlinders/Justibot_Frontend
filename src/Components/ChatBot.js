@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LadyOfJustice from '../Assets/Images/ladyofjustice.png';
 import {Button, ButtonGroup} from "@nextui-org/react";
-
+import {Textarea} from "@nextui-org/react";
 
 const ChatBot = () => {
   const initialMessage = {
@@ -84,6 +84,16 @@ const ChatBot = () => {
           onChange={handleUserInput}
           placeholder="Type your message..."
         />
+
+      {/* <Textarea
+        minRows={2}
+        label="Description"
+        placeholder="Ask for help..."
+        type="text"
+          value={userInput}
+          onChange={handleUserInput}
+      /> */}
+
         <Button color="primary" variant="ghost" type="submit">Send</Button>
       </form>
       
