@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LadyOfJustice from '../Assets/Images/ladyofjustice.png';
 import {Button, ButtonGroup} from "@nextui-org/react";
+import {VscSend} from "react-icons/vsc";
 
 
 const ChatBot = () => {
@@ -95,14 +96,17 @@ const ChatBot = () => {
           </div>
         ))}
       </div>
-      <form className="input-form" onSubmit={handleSubmit}>
+      <form className="input-form" style={{}} onSubmit={handleSubmit}>
         <input
           type="text"
           value={userInput}
           onChange={handleUserInput}
           placeholder="Type your message..."
         />
-        <Button color="primary" variant="ghost" type="submit">Send</Button>
+
+        <Button className="p-2" style={{width: '60px'}}isIconOnly color="primary" type="submit" aria-label="Like">
+          <VscSend color="white" size="25 px" />
+        </Button>
       </form>
       
       {/* <Button color="primary" variant="ghost" className="clear-chat" onClick={clearChat}>
