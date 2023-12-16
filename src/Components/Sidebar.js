@@ -4,9 +4,12 @@ import justibot from '../Assets/Images/logo_justibot.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
 import {Select, SelectItem} from "@nextui-org/react";
+import chatBot from "./ChatBot";
 
 const Sidebar = () => {
+
   return (
     <div className="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top">
       <div className="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
@@ -34,7 +37,7 @@ const Sidebar = () => {
             <span className="d-none d-sm-inline mx-1">Chamika Madushan</span>
           </a>
           <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a className="dropdown-item" href="#">New chat...</a></li>
+            <li><a className="dropdown-item" href="#" >New chat...</a></li>
             <li><a className="dropdown-item" href="#">Settings</a></li>
             <li><a className="dropdown-item" href="#">Switch to professional</a></li>
             {/* ... Other dropdown items */}

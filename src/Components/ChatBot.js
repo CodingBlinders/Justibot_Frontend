@@ -43,25 +43,49 @@ const ChatBot = () => {
     setUserInput(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  // ... (previous code remains unchanged)
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (userInput.trim() !== '') {
       const userMessage = { text: userInput, isUser: true };
-
       const updatedMessages = [...messages, userMessage];
       localStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
       setMessages(updatedMessages);
       setUserInput('');
-      if(showIntro) setShowIntro(false);
+      if (showIntro) setShowIntro(false);
 
-      setTimeout(() => {
-        const botMessage = { text: 'I am an AI and this is a sample response.', isUser: false };
-        const updatedMessagesWithBot = [...updatedMessages, botMessage];
-        localStorage.setItem('chatMessages', JSON.stringify(updatedMessagesWithBot));
-        setMessages(updatedMessagesWithBot);
-      }, 500);
+      try {
+        const requestOptions = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message: userInput }),
+        };
+
+        const response = await fetch("http://localhost:8000/test", requestOptions);
+        if (!response.ok) {
+          throw new Error('Network response was not ok.');
+        }
+
+        const result = await response.text();
+
+        setTimeout(() => {
+
+          const botMessage = { text: result, isUser: false };
+          const updatedMessagesWithBot = [...updatedMessages, botMessage];
+          localStorage.setItem('chatMessages', JSON.stringify(updatedMessagesWithBot));
+          setMessages(updatedMessagesWithBot);
+        }, 500);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        // Handle error scenarios, show an error message in the chat, etc.
+      }
     }
   };
+
+
 
   const clearChat = () => {
     localStorage.removeItem('chatMessages');
@@ -95,11 +119,12 @@ const ChatBot = () => {
         )}
         {messages.map((message, index) => (
           <div key={index} className={message.isUser ? 'user-message' : 'bot-message'}>
-            {message.text}
+            {(message.text)
+            }
           </div>
         ))}
       </div>
-      <form className="input-form" style={{}} onSubmit={handleSubmit}>
+      <form className="input-form" style={{position:'sticky',bottom:'0px'}} onSubmit={handleSubmit}>
         <input
           type="text"
           value={userInput}
