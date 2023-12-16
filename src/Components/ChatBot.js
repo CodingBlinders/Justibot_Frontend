@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LadyOfJustice from '../Assets/Images/ladyofjustice.png';
+import logo from '../Assets/Images/justibot-only-logo.png';
 import {Button, ButtonGroup} from "@nextui-org/react";
 import {VscSend} from "react-icons/vsc";
 
@@ -73,9 +74,11 @@ const ChatBot = () => {
       <div className="messages">
       {showIntro && (
           <div className="intro">
-            <img src={LadyOfJustice} alt="Logo" />
-            <div className="intro-text">
-              <p className="initial">{initialMessage.text}</p>
+            <div className="intro-header">
+            <img src={logo} alt="Logo" />
+            <p className="initial">{initialMessage.text}</p>
+            </div>
+              <div className="intro-text">
               <div className="row row-cols-1 row-cols-md-2 g-4">
                 {prompts.map((prompt, index) => (
                   <div key={index} className="col">

@@ -10,8 +10,8 @@ const Sidebar = () => {
   return (
     <div className="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top">
       <div className="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
-        <a href="/" className="flex align-content-center align-middle align-items-center justify-content-center pb-sm-3  text-white text-decoration-none" style={{width:'100%',justifyContent:'center',display:'flex'}}>
-          <img src={justibot} alt="Logo" width="auto" height="40" style={{marginTop:'10px'}}/>
+        <a href="/" className="flex align-content-center align-middle align-items-center pb-sm-3  text-white text-decoration-none" style={{width:'100%',justifyContent:'center',display:'flex'}}>
+          <img src={justibot} alt="Logo" width="150px" height="auto" style={{marginTop:'10px'}}/>
           {/* <span className="fs-5">Justi<span className="d-none d-sm-inline">Bot</span></span> */}
         </a>
         <ul className="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">

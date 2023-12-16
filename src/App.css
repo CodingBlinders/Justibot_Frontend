@@ -1,5 +1,6 @@
 body {
   background-color: #000000 !important; 
+  overflow: hidden !important;
 }
 
 .chat-container {
@@ -14,8 +15,25 @@ body {
   margin-bottom: 10px;
   background-color: #0b0b0b;; 
   color: #fff; 
+  scrollbar-width: thin;
+  scrollbar-color: #888888 #0b0b0b;
   overflow-y: scroll ;
 }
+
+.chat-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+  background: #0b0b0b;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background-color: #888888;
+  border-radius: 20px;
+  border: 1px solid #0b0b0b;
+}
+
 
 .messages {
   display: flex;
@@ -83,6 +101,13 @@ button{
   grid-template-rows: auto auto;
   justify-content: center;
   margin-bottom: 10px;
+  margin-top: auto;
+}
+
+.intro-header{
+  text-align: center;
+  margin-bottom: 50px;
+  gap: 20px;
 }
 
 .initial{
@@ -93,8 +118,9 @@ button{
 }
 
 .intro img {
-  width:300px;
-  height: 300px;
+  width: 150px;
+  height: auto;
   justify-self: center;
   align-self: center; 
+  margin-bottom: 50px;
 }
