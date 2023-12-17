@@ -8,9 +8,9 @@ import {VscSend} from "react-icons/vsc";
 import { VscRefresh } from 'react-icons/vsc';
 
 
-const ChatBot = () => {
+const ProChatBot = () => {
   const initialMessage = {
-    text: "Welcome! I'm JustiBot. Feel free to start the conversation.",
+    text: "Welcome to JustiBot Pro. Feel free to start the conversation.",
     isUser: false,
   };
 
@@ -139,7 +139,6 @@ const ChatBot = () => {
             </div>
           </div>
         )}
-
         {messages.map((message, index) => (
           <div key={index} className={message.isUser ? 'user-message' : 'bot-message'}>
             {message.isUser ? (
@@ -162,17 +161,16 @@ const ChatBot = () => {
           <VscSend color="white" size="25 px" />
         </Button>
 
-        <Button onClick={clearChat} color="error" variant="text" className="refresh-button" style={{ fontSize: '16px' }}>
+        <Button onClick={clearChat} color="dark" variant="text" className="refresh-button" style={{ fontSize: '16px' }}>
             <VscRefresh size={30} />
         </Button>
-
       </form>
-      
-      {/* <Button color="primary" variant="ghost" className="clear-chat" onClick={clearChat}>
+{/*       
+      <Button color="primary" variant="ghost" className="clear-chat" onClick={clearChat}>
         New Chat 
       </Button> */}
     </div>
   );
 };
 
-export default ChatBot;
+export default ProChatBot;

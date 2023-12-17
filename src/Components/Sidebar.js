@@ -1,5 +1,8 @@
 import React from 'react';
 import justibot from '../Assets/Images/logo_justibot.png';
+import { Button } from "@nextui-org/react"; // Import Button component from Next UI
+import { Link } from 'react-router-dom';
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -8,7 +11,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import {Select, SelectItem} from "@nextui-org/react";
 import chatBot from "./ChatBot";
 
-const Sidebar = () => {
+const Sidebar = ({ clearChat }) => {
 
   return (
     <div className="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top">
@@ -20,12 +23,12 @@ const Sidebar = () => {
         <ul className="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
           <li className="nav-item">
             <a href="#" className="nav-link px-sm-0 px-2">
-              <i className="fs-5 bi-house"></i><span className="ms-1 d-none d-sm-inline">Home</span>
+              <i className="fs-5 bi-house"></i><span className="ms-1 d-none d-sm-inline text-white">Home</span>
             </a>
           </li>
           <li >
             <a href="#submenu1" data-bs-toggle="collapse" className="nav-link px-sm-0 px-2">
-              <i className="fs-5 bi-speedometer2"></i><span className="ms-1 d-none d-sm-inline ">Dashboard</span>
+              <i className="fs-5 bi-speedometer2"></i><span className="ms-1 d-none d-sm-inline text-white">Dashboard</span>
             </a>
           </li>
 
@@ -37,9 +40,9 @@ const Sidebar = () => {
             <span className="d-none d-sm-inline mx-1">Chamika Madushan</span>
           </a>
           <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a className="dropdown-item" href="#" >New chat...</a></li>
+            <li><Link to="/chat" className="dropdown-item">New Chat</Link></li>
             <li><a className="dropdown-item" href="#">Settings</a></li>
-            <li><a className="dropdown-item" href="#">Switch to professional</a></li>
+            <li><Link to="/pro-chat" className="dropdown-item">Switch to professional</Link></li>
             {/* ... Other dropdown items */}
           </ul>
         </div>
