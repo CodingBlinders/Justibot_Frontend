@@ -7,10 +7,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import Sidebar from '../Components/Sidebar';
-import ChatBot from '../Components/ChatBot';
-import Footer from '../Components/Footer';
+import ProChatBot from '../Components/ProChatBot';
+import ProFooter from '../Components/ProFooter';
 
-const HomePage = () => {
+const ProHomePage = () => {
 
   const [chatMessages, setChatMessages] = useState([]);
 
@@ -19,18 +19,19 @@ const HomePage = () => {
     localStorage.removeItem('chatMessages');
     setChatMessages([]);
   };
-  
+
+
   return (
     <div className="container-fluid overflow-hidden">
       <div className="row vh-100 overflow-auto">   
-        <Sidebar />
+        <Sidebar clearChat={clearChat} />
         <div className="col d-flex flex-column h-sm-100"> 
-          <ChatBot />
-          <Footer />
+          <ProChatBot />
+          <ProFooter />
         </div>
       </div>
     </div>
   );
 };
 
-export default HomePage;
+export default ProHomePage;
