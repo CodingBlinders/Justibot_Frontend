@@ -2,6 +2,8 @@ import React from 'react';
 import justibot from '../Assets/Images/logo_justibot.png';
 import { Button } from "@nextui-org/react"; // Import Button component from Next UI
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome,faUpLong, faTachometerAlt, faCommentAlt, faCogs, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,13 +25,13 @@ const Sidebar = ({ clearChat }) => {
         </a>
         <ul className="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
           <li className="nav-item">
-            <Link to = "/chat" className="nav-link px-sm-0 px-2">
-              <i className="fs-5 bi-house"></i><span className="ms-1 d-none d-sm-inline text-white">Home</span>
+            <Link to="/chat" className="nav-link px-sm-0 px-2">
+              <FontAwesomeIcon icon={faHome} className="fs-5" /><span className="ms-1 d-none d-sm-inline text-white">Home</span>
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/upgrade" className="nav-link px-sm-0 px-2">
-              <i className="fs-5 bi-speedometer2"></i><span className="ms-1 d-none d-sm-inline text-white">Upgrade</span>
+              <FontAwesomeIcon icon={faUpLong} className="fs-5" /><span className="ms-1 d-none d-sm-inline text-white">Upgrade</span>
             </Link>
           </li>
 
