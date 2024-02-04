@@ -13,7 +13,8 @@ const Packages = () => {
         'Common legal resources',
         '20 chat support messages',
       ],
-      price: '$0.00',
+      price: 'Free',
+      pricealt: '$0.00',
     },
     {
       id: 2,
@@ -25,6 +26,7 @@ const Packages = () => {
         'Access to exclusive legal resources',
       ],
       price: '$49.99',
+      pricealt: '$69.99',
       current: true,
     },
   ];
@@ -71,7 +73,7 @@ const Packages = () => {
                 <div>
                   <div className="plan mt-4 pt-2">
                     <h4 className="text">
-                      <s> $69.99</s> <span className="plan pl-3 text">{pack.price}</span>
+                      <s> {pack.pricealt}</s> <span className="plan pl-3 text">{pack.price}</span>
                     </h4>
                     <h6 className="text mb-0">Per Month</h6>
                   </div>
