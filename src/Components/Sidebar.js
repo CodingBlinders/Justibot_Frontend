@@ -10,6 +10,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import {Select, SelectItem} from "@nextui-org/react";
 import chatBot from "./ChatBot";
+import clearChat from './clearChat';
 
 const Sidebar = ({ clearChat }) => {
 
@@ -22,14 +23,14 @@ const Sidebar = ({ clearChat }) => {
         </a>
         <ul className="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
           <li className="nav-item">
-            <a href="#" className="nav-link px-sm-0 px-2">
+            <Link to = "/chat" className="nav-link px-sm-0 px-2">
               <i className="fs-5 bi-house"></i><span className="ms-1 d-none d-sm-inline text-white">Home</span>
-            </a>
+            </Link>
           </li>
-          <li >
-            <a href="#submenu1" data-bs-toggle="collapse" className="nav-link px-sm-0 px-2">
-              <i className="fs-5 bi-speedometer2"></i><span className="ms-1 d-none d-sm-inline text-white">Dashboard</span>
-            </a>
+          <li className="nav-item">
+            <Link to="/upgrade" className="nav-link px-sm-0 px-2">
+              <i className="fs-5 bi-speedometer2"></i><span className="ms-1 d-none d-sm-inline text-white">Upgrade</span>
+            </Link>
           </li>
 
           {/* ... Other list items */}
@@ -42,7 +43,7 @@ const Sidebar = ({ clearChat }) => {
           <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
             <li><Link to="/chat" className="dropdown-item">New Chat</Link></li>
             <li><a className="dropdown-item" href="#">Settings</a></li>
-            <li><Link to="/pro-chat" className="dropdown-item">Switch to professional</Link></li>
+            <li><Link to="/pro" className="dropdown-item">Switch to professional</Link></li>
             {/* ... Other dropdown items */}
           </ul>
         </div>

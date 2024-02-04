@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Button, ButtonGroup} from "@nextui-org/react";
+import { useNavigate } from 'react-router-dom';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,6 +20,23 @@ const ProHomePage = () => {
     localStorage.removeItem('chatMessages');
     setChatMessages([]);
   };
+
+  const navigate = useNavigate();
+
+  // Function to clear chat messages when route changes
+  const handleRouteChange = () => {
+    clearChat();
+    // You can add additional logic here if needed
+  };
+
+  // Effect to listen for route changes
+  useEffect(() => {
+    return () => {
+      // Cleanup function, clearChat when component unmounts
+      clearChat();
+    };
+  }, []);
+
 
 
   return (
