@@ -9,6 +9,7 @@ import Login from './Pages/Login';
 import './Assets/css/login.css';
 import 'flowbite';
 import './App.css';
+import SignUp from './Pages/Signup';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/pro" element={<ProHomePage />}/>
           <Route path="/upgrade" element={<Packages />} />
           <Route path="/login" element={<Login />}/>
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </NextUIProvider>
     </BrowserRouter>
