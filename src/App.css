@@ -1,5 +1,5 @@
 html{
-  margin: 0 !important;
+  /* margin: 0 !important; */
   padding: 0;
   height: 100%;
   background: linear-gradient(to right, #071728, #01010a) !important;
@@ -164,3 +164,15 @@ button{
   height: 100%;
 }
 
+.title-text{
+  align-items: center;
+  text-align: center;
+}
+
+.centered-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-left: 70px;
+}
