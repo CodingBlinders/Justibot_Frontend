@@ -1,6 +1,12 @@
+html{
+  margin: 0%;
+  padding: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #071728, #01010a) !important;
+}
 body {
-  background-color: #000000 !important; 
-  overflow: hidden !important;
+  background: linear-gradient(to right, #071728, #01010a) !important;
+  height: 100%;
 }
 
 .chat-container {
@@ -157,3 +163,4 @@ button{
 .landing-page{
   height: 100%;
 }
+

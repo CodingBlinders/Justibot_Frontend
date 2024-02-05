@@ -6,7 +6,7 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nex
 const NavBar = () => {
   return (
     <div>
-    <Navbar position="static" isBlurred="true" className="dark text-foreground bg-background">
+    <Navbar position="static" isBlurred="true" className="dark text-foreground bg-transparent">
       <NavbarBrand>
         <p className="font-bold text-inherit">JustiBot</p>
       </NavbarBrand>
