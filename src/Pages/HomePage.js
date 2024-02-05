@@ -26,7 +26,6 @@ const HomePage = () => {
         <Sidebar />
         <div className="col d-flex flex-column h-sm-100"> 
           <ChatBot />
-          <Footer />
         </div>
       </div>
     </div>
