@@ -1,6 +1,12 @@
+html{
+  margin: 0%;
+  padding: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #071728, #01010a) !important;
+}
 body {
-  background-color: #000000 !important; 
-  overflow: hidden !important;
+  background: linear-gradient(to right, #071728, #01010a) !important;
+  height: 100%;
 }
 
 .chat-container {
@@ -156,22 +162,5 @@ button{
 
 .landing-page{
   height: 100%;
-}
-
-.microsoft-signin-button {
-  background-color: #0078D7; /* Microsoft brand blue */
-  color: #fff; /* White text */
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.microsoft-signin-button:hover {
-  opacity: 0.8;
 }
 
