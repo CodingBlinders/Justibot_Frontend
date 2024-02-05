@@ -2,11 +2,11 @@ import React from 'react';
 import LadyOfJustice from '../Assets/Images/ladyofjustice-2.jpg';
 import {Button, ButtonGroup} from "@nextui-org/react";
 import { TypeAnimation } from 'react-type-animation';
-
-import {Link} from "@nextui-org/react";
+import { Link } from 'react-router-dom';
 import NavBar from '../Components/NavBar';
 import { LinearGradient } from 'react-text-gradients'
 import Footer from '../Components/Footer';
+import { color } from 'framer-motion';
 
 
 
@@ -37,6 +37,12 @@ const ExampleComponent = () => {
 
 
 const LandingPage = () => {
+
+  const buttonStyle = {
+    fontSize: '20px', // Adjust the font size as needed
+    padding: '15px 20px', // Adjust the padding as needed
+  };
+
   return (
   <div>
     <NavBar position="sticky"/>
@@ -51,13 +57,14 @@ const LandingPage = () => {
 
           <div className="text-center text-light">
             <ExampleComponent/>
-            <p>Chat now with Your Legal AI Assistant !</p><br/>
+            {/* <p>Chat now with Your Legal AI Assistant !</p><br/> */}
+            <br/><br/><br/>
             
-            <Button color="primary" variant="bordered" text-colour="white">
-              <Link to="/chat">
+            <Button color="primary" variant="bordered" className='btn btn-primary btn-lg'>
+              <Link to="/chat" className='chat-button' style={buttonStyle}>
                 Start Chat
               </Link>
-            </Button> 
+            </Button>
           </div>
         </div>
         <div className="col-md-6">

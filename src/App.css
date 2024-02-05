@@ -190,3 +190,6 @@ button{
   color: #fff !important;
 }
 
+.chat-button link{
+  size: 80px;
+}
