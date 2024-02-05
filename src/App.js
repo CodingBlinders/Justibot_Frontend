@@ -5,6 +5,9 @@ import Packages from './Pages/Packages';
 import { clearChat } from './Components/clearChat';
 import { NextUIProvider } from "@nextui-org/react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './Pages/Login';
+import './Assets/css/login.css';
+import 'flowbite';
 import './App.css';
 
 function App() {
@@ -16,6 +19,7 @@ function App() {
           <Route path="/chat" element={<HomePage />} />
           <Route path="/pro" element={<ProHomePage />}/>
           <Route path="/upgrade" element={<Packages />} />
+          <Route path="/login" element={<Login />}/>
         </Routes>
       </NextUIProvider>
     </BrowserRouter>

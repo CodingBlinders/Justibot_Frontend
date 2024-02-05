@@ -1,0 +1,50 @@
+.gradient-background {
+    background: linear-gradient(to right, #071728, #01010a);
+  }
+  
+.login-form{
+    background: linear-gradient(to right, #0e0e2f, #000000);;
+}
+
+.google-signin-button {
+    background-color: #4285F4; /* Google brand blue */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+.google-signin-button:hover {
+opacity: 0.8;
+}  
+
+.microsoft-signin-button {
+    background-color: #0078D7; /* Microsoft brand blue */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .microsoft-signin-button:hover {
+    opacity: 0.8;
+  }
+
+  .login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  
