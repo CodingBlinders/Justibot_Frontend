@@ -6,6 +6,7 @@ import { TypeAnimation } from 'react-type-animation';
 import {Link} from "@nextui-org/react";
 import NavBar from '../Components/NavBar';
 import { LinearGradient } from 'react-text-gradients'
+import Footer from '../Components/Footer';
 
 
 
@@ -37,7 +38,7 @@ const ExampleComponent = () => {
 
 const LandingPage = () => {
   return (
-    <div>
+  <div>
     <NavBar />
     <div className="container mt-5">
       <div className="row align-items-center">
@@ -64,7 +65,8 @@ const LandingPage = () => {
         </div>
       </div>
     </div>
-    </div>
+    <Footer/>
+  </div>
     
   );
 };
