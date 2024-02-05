@@ -144,3 +144,16 @@ button{
   padding: 5px 10px;
   cursor: pointer;
 }
+
+/* Landing Page css files */
+.large-text{
+  font-size: 5rem;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 50px;
+  margin-bottom: 20px;
+}
+
+div{
+  height: 100%;
+}
