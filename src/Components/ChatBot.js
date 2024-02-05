@@ -159,7 +159,7 @@ const ChatBot = () => {
         ))}
         {isGenerating && <div className="bot-message"><Format text='Generating...' /></div>}
       </div>
-      <form className="input-form" style={{position:'sticky',bottom:'0px'}} onSubmit={handleSubmitHard}>
+      <form className="input-form" style={{position:'sticky',bottom:'0px'}} onSubmit={handleSubmit}>
         <input
           type="text"
           value={userInput}

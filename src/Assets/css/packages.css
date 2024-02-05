@@ -67,3 +67,9 @@ p {
   border-color: #4caf50; /* Change button border color */
   color: #fff; /* Change button text color */
 }
+
+.title-text-packages{
+  align-items: center;
+  text-align: center;
+  size: 30px;
+}

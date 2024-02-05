@@ -23,20 +23,39 @@ const Sidebar = ({ clearChat }) => {
           <img src={justibot} alt="Logo" width="150px" height="auto" style={{marginTop:'10px'}}/>
           {/* <span className="fs-5">Justi<span className="d-none d-sm-inline">Bot</span></span> */}
         </a>
-        <ul className="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
-          <li className="nav-item">
-            <Link to="/chat" className="nav-link px-sm-0 px-2">
-              <FontAwesomeIcon icon={faHome} className="fs-5" /><span className="ms-1 d-none d-sm-inline text-white">Home</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/upgrade" className="nav-link px-sm-0 px-2">
-              <FontAwesomeIcon icon={faUpLong} className="fs-5" /><span className="ms-1 d-none d-sm-inline text-white">Upgrade</span>
-            </Link>
-          </li>
+        <br/><br/>
+        
+        <div class="question-set">
+          <a href="#" class="history-card block max-w-sm p-6 border-gray-200 rounded-lg hover:bg-blue-900 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <p class="font-normal text-gray-700 dark:text-gray-400">Legal Custody Advice</p>
+          </a>
 
-          {/* ... Other list items */}
-        </ul>
+          <a href="#" class="history-card block max-w-sm p-6 border-gray-200 rounded-lg hover:bg-blue-900 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <p class="font-normal text-gray-700 dark:text-gray-400">Property Rights Inquiry</p>
+          </a>
+
+          <a href="#" class="history-card block max-w-sm p-6 border-gray-200 rounded-lg hover:bg-blue-900 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <p class="font-normal text-gray-700 dark:text-gray-400">Divorce Process Explained</p>
+          </a>
+          <a href="#" class="history-card block max-w-sm p-6 border-gray-200 rounded-lg hover:bg-blue-900 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <p class="font-normal text-gray-700 dark:text-gray-400">Child Custody Laws</p>
+          </a>
+
+          <a href="#" class="history-card block max-w-sm p-6 border-gray-200 rounded-lg hover:bg-blue-900 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <p class="font-normal text-gray-700 dark:text-gray-400">Legal Rights After Accident</p>
+          </a>
+
+          <a href="#" class="history-card block max-w-sm p-6 border-gray-200 rounded-lg hover:bg-blue-900 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <p class="font-normal text-gray-700 dark:text-gray-400">Tax Law Basics</p>
+          </a>
+
+          <a href="#" class="history-card block max-w-sm p-6 border-gray-200 rounded-lg hover:bg-blue-900 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <p class="font-normal text-gray-700 dark:text-gray-400">Employment Law Queries</p>
+          </a>
+        </div>
+
+
+
         <div className="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
           <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="hugenerd" width="28" height="28" className="rounded-circle" />

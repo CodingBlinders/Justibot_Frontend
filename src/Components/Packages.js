@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Assets/css/packages.css';
+import { LinearGradient } from 'react-text-gradients';
 
 const Packages = () => {
   const packages = [
@@ -29,28 +30,36 @@ const Packages = () => {
       pricealt: '$69.99',
       current: true,
     },
+    {
+      id: 3,
+      name: 'Premium Package',
+      description: 'Includes premium legal resources and priority support.',
+      details: [
+        'Unlimited legal consultation',
+        '24/7 priority chat support',
+        'Access to exclusive legal resources',
+      ],
+      price: '$49.99',
+      pricealt: '$69.99',
+      current: true,
+    },
   ];
-
-  // Filter packages to display only two
-  const displayedPackages = packages.slice(0, 2);
 
   return (
     <div className="container mt-4">
       <div className="row">
-            <div className="col-lg-12">
-                <div className="title-box text-center text-white mb-4">
-                    <h3 className="title-heading mt-4">Pricing Packages </h3>
-                    <p className="text f-17 mt-3">Vivamus ac nulla ultrices laoreet neque mollis mi morbi
-                        elementum mauris
-                        sit amet arcu <br /> fringilla auctor In eleifend maximus nisi sed vulputate.
-                    </p>
-                </div>
-            </div>
+        <div className="col-lg-12">
+        <h1 className="large-text title-text">
+            <LinearGradient gradient={['to left', '#17acff ,#ff68f0']}>
+              Our Packages
+            </LinearGradient>
+          </h1><br/>
         </div>
-      <div className="row justify-content-center">
-        {displayedPackages.map((pack) => (
-          <div key={pack.id} className="col-md-6 mb-4 text-center">
-            <div className="pricing-box bg-dark text-white" style={{ height: '100%' }}>
+      </div>
+      <div className="row justify-content-center centered-content">
+        {packages.map((pack) => (
+          <div key={pack.id} className="col-md-4 text-center"> {/* Adjust the width as needed */}
+            <div className="pricing-box bg-dark text-white" style={{ height: '80%', width:'80%'}}>
               {pack.current && (
                 <div className="pricing-badge">
                   <span className="badge">Current</span>
@@ -58,7 +67,7 @@ const Packages = () => {
               )}
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <h5 className="f-20 text-primary">{pack.name}</h5>
+                  <h3 className="title-text-packages text-primary">{pack.name}</h3>
                   <p className="card-text">{pack.description}</p>
                   <ul className="list-unstyled">
                     {pack.details.map((detail, index) => (
@@ -75,7 +84,7 @@ const Packages = () => {
                     <h4 className="text">
                       <s> {pack.pricealt}</s> <span className="plan pl-3 text">{pack.price}</span>
                     </h4>
-                    <h6 className="text mb-0">Per Month</h6>
+                    <h1 className="text mb-0 title-text-packages">Per Month </h1>
                   </div>
                   <Link to={`/pro`}>
                     <button type="button" className="btn btn-primary btn-lg btn-block mt-3">

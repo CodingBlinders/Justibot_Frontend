@@ -8,6 +8,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import Sidebar from '../Components/Sidebar';
 import Packages from '../Components/Packages';
 import Footer from '../Components/Footer';
+import NavBar from '../Components/NavBar';
 
 const HomePage = () => {
 
@@ -20,9 +21,9 @@ const HomePage = () => {
   };
   
   return (
-    <div className="container-fluid overflow-hidden">
-      <div className="row vh-100 overflow-auto">   
-        <Sidebar />
+    <div>
+      <NavBar/>
+      <div className="overflow-auto">   
         <div className="col d-flex flex-column h-sm-100"> 
           <Packages />
           <Footer />

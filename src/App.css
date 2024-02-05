@@ -1,6 +1,6 @@
 html{
-  margin: 0%;
-  padding: 0%;
+  /* margin: 0 !important; */
+  padding: 0;
   height: 100%;
   background: linear-gradient(to right, #071728, #01010a) !important;
 }
@@ -12,14 +12,13 @@ body {
 .chat-container {
   display: flex;
   flex-direction: column;
-  min-height: 87vh;
-  max-height: 88vh;
+  height: 100vh;
   border: 1px solid #0c0c0c; 
   padding: 20px;
+  padding-bottom: 10px;
   border-radius: 8px;
-  margin-top: 20px;
   margin-bottom: 10px;
-  background-color: #0b0b0b;; 
+  /* background-color: #0b0b0b; */
   color: #fff; 
   scrollbar-width: thin;
   scrollbar-color: #888888 #0b0b0b;
@@ -30,9 +29,9 @@ body {
   width: 8px;
 }
 
-.chat-container::-webkit-scrollbar-track {
+/* .chat-container::-webkit-scrollbar-track {
   background: #0b0b0b;
-}
+} */
 
 .chat-container::-webkit-scrollbar-thumb {
   background-color: #888888;
@@ -164,3 +163,25 @@ button{
   height: 100%;
 }
 
+.title-text{
+  align-items: center;
+  text-align: center;
+}
+
+.centered-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-left: 70px;
+}
+
+.history-card{
+  width: 100%;	
+  padding: 10px;
+}
+
+.history-card p{
+  color: #fff;
+  font-size: 14px;
+}
