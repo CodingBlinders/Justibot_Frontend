@@ -69,7 +69,7 @@ const ChatBot = () => {
           body: JSON.stringify({ message: userInput }),
         };
 
-        const response = await fetch("http://localhost:8000/test", requestOptions);
+        const response = await fetch("http://20.235.249.223:8000/free", requestOptions);
         if (!response.ok) {
           throw new Error('Network response was not ok.');
         }
