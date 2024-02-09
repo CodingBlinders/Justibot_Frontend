@@ -12,7 +12,8 @@ const Login = () => {
   const { loginWithRedirect } = useAuth0();
 
   const handleGoogleLogin = () => {
-    loginWithRedirect({ connection: 'google-oauth2' });
+    // Redirect the user to the endpoint for Google login
+    window.location.href = 'https://dev.codingblinders.com/auth/google';
   };
 
   const microsoftConfig = {
