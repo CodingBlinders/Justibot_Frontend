@@ -4,8 +4,9 @@ import Format from './Format';
 import LadyOfJustice from '../Assets/Images/ladyofjustice.png';
 import logo from '../Assets/Images/justibot-only-logo.png';
 import {Button, ButtonGroup} from "@nextui-org/react";
-import {VscSend} from "react-icons/vsc";
+import {VscArrowBoth, VscSend} from "react-icons/vsc";
 import { VscRefresh } from 'react-icons/vsc';
+import { VscCrown } from 'react-icons/vsc';
 
 
 const ProChatBot = () => {
@@ -129,7 +130,10 @@ const ProChatBot = () => {
       <div className="messages">
       {showIntro && (
         <div className="intro">
-          <img src={logo} alt="Logo" />
+           <div style={{ display: 'flex'}}>
+            <img src={logo} alt="Logo" />
+            <span className="badge badge-pro">Pro</span>
+          </div>
           <div className="intro-header">      
             <p className="initial">{initialMessage.text}</p>
           </div>
