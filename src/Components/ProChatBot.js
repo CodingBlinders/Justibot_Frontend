@@ -23,6 +23,7 @@ const ProChatBot = () => {
 
   const [showIntro, setShowIntro] = useState(true);
   const [messages, setMessages] = useState([]);
+  const [isGenerating, setIsGenerating] = useState(false);
 
   useEffect(() => {
     const savedMessages = JSON.parse(localStorage.getItem('chatMessages'));
@@ -73,17 +74,21 @@ const ProChatBot = () => {
 
         const result = await response.text();
 
+        setIsGenerating(true);
+
         setTimeout(() => {
 
           const botMessage = { text: result, isUser: false };
           const updatedMessagesWithBot = [...updatedMessages, botMessage];
           localStorage.setItem('chatMessages', JSON.stringify(updatedMessagesWithBot));
           setMessages(updatedMessagesWithBot);
+          setIsGenerating(false);
         }, 500);
       } catch (error) {
         console.error('Error fetching data:', error);
         // Handle error scenarios, show an error message in the chat, etc.
       }
+      setIsGenerating(false);
     }
   };
 
@@ -98,11 +103,14 @@ const ProChatBot = () => {
       setUserInput('');
       if(showIntro) setShowIntro(false);
 
+      setIsGenerating(true);
+
       setTimeout(() => {
         const botMessage = { text: 'Title: Certificates and solemnization of marriages upon alteration of divisions\n Law sections and its subsections related"<br>" to question: Section 4 ([8, 22 of 1955]), Section 10 ([10, 22 of 1946]), Section 14 ([7, 34 of 1946]) and Section 28 ([7, of 1944])\n Answer: For a marriage certificate to be issued by a district registrar from the old or new division when an area undergoes a transition as outlined in Law [7, of 1944] Section 28, a marriage must be solemnized in pursuance of Section 33 of the law without any of the preliminaries prescribed by Sections 4 and 10. The required acts must be done by a District Registrar of the old division or the new division nominated by the District Registrar within the District, and the Registrar-General must periodically publish a list of Registrars of Marriages in Sri Lanka, and the buildings they administer, as laid down by Section 14 ([7, 34 of 1946]).\n Conclusion: In conclusion', isUser: false };
         const updatedMessagesWithBot = [...updatedMessages, botMessage];
         localStorage.setItem('chatMessages', JSON.stringify(updatedMessagesWithBot));
         setMessages(updatedMessagesWithBot);
+        setIsGenerating(false);
       }, 500);
     }
   };
@@ -110,6 +118,7 @@ const ProChatBot = () => {
 
 
   const clearChat = () => {
+    if(isGenerating) setIsGenerating(false);
     localStorage.removeItem('chatMessages');
     setMessages([]);
     if(!showIntro) setShowIntro(true);
@@ -119,26 +128,30 @@ const ProChatBot = () => {
     <div className="chat-container">
       <div className="messages">
       {showIntro && (
-          <div className="intro">
-            <div className="intro-header">
-            <img src={logo} alt="Logo" />
+        <div className="intro">
+          <img src={logo} alt="Logo" />
+          <div className="intro-header">      
             <p className="initial">{initialMessage.text}</p>
-            </div>
-              <div className="intro-text">
-              <div className="row row-cols-1 row-cols-md-2 g-4">
-                {prompts.map((prompt, index) => (
-                  <div key={index} className="col">
-                    <div className="card bg-dark">
-                      <div className="card-body text-white">
-                        {prompt}
+          </div>
+          <div className="intro-text">
+            <div className="row row-cols-1 row-cols-md-2 g-4">
+              {prompts.map((prompt, index) => (
+                <div key={index} className="col">
+                  <div className="intro-card">
+                    <div className="d-flex align-items-center justify-content-between mb-2">
+                      {/* <img src="your-icon-path" alt="Icon" className="card-icon" /> */}
+                      <div className="card-body text-white">{prompt}</div>
+                      <div className="send-icon">
+                        <VscSend className="send-icon" />
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
-        )}
+        </div>
+      )}
         {messages.map((message, index) => (
           <div key={index} className={message.isUser ? 'user-message' : 'bot-message'}>
             {message.isUser ? (
@@ -148,6 +161,7 @@ const ProChatBot = () => {
             )}
           </div>
         ))}
+        {isGenerating && <div className="bot-message"><Format text='Generating...' /></div>}
       </div>
       <form className="input-form" style={{position:'sticky',bottom:'0px'}} onSubmit={handleSubmit}>
         <input

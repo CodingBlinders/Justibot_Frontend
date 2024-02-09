@@ -5,7 +5,7 @@ import Packages from './Pages/Packages';
 import { clearChat } from './Components/clearChat';
 import { NextUIProvider } from "@nextui-org/react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './Pages/Login';
+import Login from './Pages/login';
 import './Assets/css/login.css';
 import 'flowbite';
 import './App.css';
