@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import Format from './Format';
-import LadyOfJustice from '../Assets/Images/ladyofjustice.png';
 import logo from '../Assets/Images/justibot-only-logo.png';
-import {Button, ButtonGroup, Input} from "@nextui-org/react";
+import {Button} from "@nextui-org/react";
 import {VscSend} from "react-icons/vsc";
 import { VscRefresh } from 'react-icons/vsc';
 
@@ -91,18 +90,18 @@ const ChatBot = () => {
     }
   };
 
-  const handleSubmitHard = (e) => {
-    e.preventDefault();
-    if (userInput.trim() !== '') {
-      const userMessage = { text: userInput, isUser: true };
+  // const handleSubmitHard = (e) => {
+  //   e.preventDefault();
+  //   if (userInput.trim() !== '') {
+  //     const userMessage = { text: userInput, isUser: true };
 
-      const updatedMessages = [...messages, userMessage];
-      localStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
-      setMessages(updatedMessages);
-      setUserInput('');
-      if(showIntro) setShowIntro(false);
+  //     const updatedMessages = [...messages, userMessage];
+  //     localStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
+  //     setMessages(updatedMessages);
+  //     setUserInput('');
+  //     if(showIntro) setShowIntro(false);
 
-      setIsGenerating(true);
+  //     setIsGenerating(true);
 
       setTimeout(() => {
         const botMessage = { text: 'Title: Certificates and solemnization of marriages upon alteration of divisions\n Law sections and its subsections related"<br>" to question: Section 4 ([8, 22 of 1955]), Section 10 ([10, 22 of 1946]), Section 14 ([7, 34 of 1946]) and Section 28 ([7, of 1944])\n Answer: For a marriage certificate to be issued by a district registrar from the old or new division when an area undergoes a transition as outlined in Law [7, of 1944] Section 28, a marriage must be solemnized in pursuance of Section 33 of the law without any of the preliminaries prescribed by Sections 4 and 10. The required acts must be done by a District Registrar of the old division or the new division nominated by the District Registrar within the District, and the Registrar-General must periodically publish a list of Registrars of Marriages in Sri Lanka, and the buildings they administer, as laid down by Section 14 ([7, 34 of 1946]).\n Conclusion: In conclusion', isUser: false };
