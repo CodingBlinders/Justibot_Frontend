@@ -45,7 +45,6 @@ const ProHomePage = () => {
         <Sidebar clearChat={clearChat} />
         <div className="col d-flex flex-column h-sm-100"> 
           <ProChatBot />
-          <ProFooter />
         </div>
       </div>
     </div>
