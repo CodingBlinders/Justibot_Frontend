@@ -73,13 +73,25 @@ body {
 
 input[type="text"] {
   flex: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #ccc; /* Add a border for visibility */
+  border-radius: 8px;
   margin-right: 10px;
-  background-color: #cdc5c5; 
-  color: #111010; 
+  background-color: transparent; /* Make the background transparent */
+  color: #ffffff; /* Text color */
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
+
+input[type="text"]:focus {
+  outline: none;
+  background-color: transparent; /* Keep the background transparent on focus */
+  border-color: #007bff; /* Border color on focus */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Add focus border */
+}
+
+
 
 button{
   border-radius: 6px;
@@ -103,25 +115,88 @@ button{
   margin-top: 5px !important;
 }
 
+.send-icon {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.intro-card:hover .send-icon {
+  opacity: 1;
+}
+
+.send-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: #007bff; /* Adjust color as needed */
+}
+
 .intro {
-  display: grid;
-  grid-template-rows: auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
-  margin-top: auto;
-}
-
-.intro-header{
   text-align: center;
-  margin-bottom: 50px;
-  gap: 20px;
+  padding: 20px;
+  margin-top: 80px;
+
 }
 
-.initial{
+.intro img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.intro-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.intro-header img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.initial {
   font-size: 1.5rem;
   font-weight: 600;
-  text-align: center;
+  color: #fff;
+}
 
+.intro-text {
+  margin-top: 20px;
+}
+
+.intro-card {
+  background-color: #0d1115;
+  border: 1px solid #007bff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.intro-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.intro-card p {
+  color: #fff;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.intro-card p:first-child {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
 .intro img {

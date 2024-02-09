@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Format from './Format';
 import LadyOfJustice from '../Assets/Images/ladyofjustice.png';
 import logo from '../Assets/Images/justibot-only-logo.png';
-import {Button, ButtonGroup} from "@nextui-org/react";
+import {Button, ButtonGroup, Input} from "@nextui-org/react";
 import {VscSend} from "react-icons/vsc";
 import { VscRefresh } from 'react-icons/vsc';
 
@@ -111,12 +111,14 @@ const ChatBot = () => {
         setMessages(updatedMessagesWithBot);
         setIsGenerating(false);
       }, 500);
+      setIsGenerating(false);
     }
   };
 
 
 
   const clearChat = () => {
+    if(isGenerating) setIsGenerating(false);
     localStorage.removeItem('chatMessages');
     setMessages([]);
     if(!showIntro) setShowIntro(true);
@@ -127,26 +129,32 @@ const ChatBot = () => {
       <div className="messages">
 
       {showIntro && (
-          <div className="intro">
-            <div className="intro-header">
-            <img src={logo} alt="Logo" />
+        <div className="intro">
+          <img src={logo} alt="Logo" />
+          <div className="intro-header">      
             <p className="initial">{initialMessage.text}</p>
-            </div>
-              <div className="intro-text">
-              <div className="row row-cols-1 row-cols-md-2 g-4">
-                {prompts.map((prompt, index) => (
-                  <div key={index} className="col">
-                    <div className="card bg-dark">
-                      <div className="card-body text-white">
-                        {prompt}
+          </div>
+          <div className="intro-text">
+            <div className="row row-cols-1 row-cols-md-2 g-4">
+              {prompts.map((prompt, index) => (
+                <div key={index} className="col">
+                  <div className="intro-card">
+                    <div className="d-flex align-items-center justify-content-between mb-2">
+                      {/* <img src="your-icon-path" alt="Icon" className="card-icon" /> */}
+                      <div className="card-body text-white">{prompt}</div>
+                      <div className="send-icon">
+                        <VscSend className="send-icon" />
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
-        )}
+        </div>
+      )}
+
+
 
         {messages.map((message, index) => (
           <div key={index} className={message.isUser ? 'user-message' : 'bot-message'}>
@@ -166,7 +174,13 @@ const ChatBot = () => {
           onChange={handleUserInput}
           placeholder="Type your message..."
         />
-
+        {/* <Input 
+          type="text" 
+          variant="bordered" 
+          value={userInput}
+          onChange={handleUserInput}
+          placeholder="Type your message..." 
+        /> */}
         <Button className="p-2" style={{width: '60px'}}isIconOnly color="primary" type="submit" aria-label="Like">
           <VscSend color="white" size="25 px" />
         </Button>
