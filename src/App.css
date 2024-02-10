@@ -284,3 +284,42 @@ button{
   color: #fff; 
   margin-left: 0.5em; 
 }
+
+.typingText{
+  color: #fff;
+  font-size: 2em;
+}
+
+
+@media (max-width: 767px) {
+  .large-text {
+    font-size: 3.5rem; /* Adjust font size for smaller screens */
+    padding-left: 20px; /* Adjust padding */
+    text-align: center;
+    padding-left: 0%;
+  }
+
+  .typingText{
+    color: #fff;
+    font-size: 1.5em;
+  }
+}
+
+/* Media query for screens between 768px and 1024px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .large-text {
+    font-size: 4rem; /* Adjust font size for medium-sized screens */
+    padding-left: 30px; /* Adjust padding */
+  }
+}
+
+/* ExampleComponent.css */
+
+@media only screen and (max-width: 768px) {
+  /* Styles for screens up to 768px wide */
+  .example-component {
+    /* Adjust styles for smaller screens */
+    font-size: 1.5em;
+    /* Add more styles as needed */
+  }
+}

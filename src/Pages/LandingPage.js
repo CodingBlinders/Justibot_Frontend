@@ -9,10 +9,10 @@ import Footer from '../Components/Footer';
 import { color } from 'framer-motion';
 
 
-
 const ExampleComponent = () => {
   return (
-    <TypeAnimation
+    
+    <TypeAnimation className='typingText'
       sequence={[
         // Same substring at the start will only be typed out once, initially
         'Explore legal intricacies seamlessly.',
@@ -29,7 +29,12 @@ const ExampleComponent = () => {
       ]}
       wrapper="span"
       speed={50}
-      style={{ fontSize: '2em', display: 'inline-block' , alignContent: 'left'}}
+      style={{
+        display: 'inline-block',
+        alignContent: 'left',
+        color: 'white', // Default color
+        // Add more initial styles if needed
+      }}
       repeat={Infinity}
     />
   );
