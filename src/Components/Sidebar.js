@@ -65,6 +65,7 @@ const Sidebar = ({ clearChat }) => {
             <li><Link to="/chat" className="dropdown-item">New Chat</Link></li>
             <li><a className="dropdown-item" href="#">Settings</a></li>
             <li><Link to="/pro" className="dropdown-item">Switch to professional</Link></li>
+            <li><Link to="/enterprise" className="dropdown-item">Switch to enterprise</Link></li>
             {/* ... Other dropdown items */}
           </ul>
         </div>

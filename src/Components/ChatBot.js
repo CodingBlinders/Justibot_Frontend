@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import Format from './Format';
 import LadyOfJustice from '../Assets/Images/ladyofjustice.png';
 import logo from '../Assets/Images/justibot-only-logo.png';

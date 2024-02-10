@@ -1,10 +1,10 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { NextUIProvider } from "@nextui-org/react";
 import LandingPage from './Pages/LandingPage';
 import HomePage from './Pages/HomePage';
 import ProHomePage from './Pages/ProHomePage';
 import Packages from './Pages/Packages';
-import { clearChat } from './Components/clearChat';
-import { NextUIProvider } from "@nextui-org/react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Pages/login';
 import './Assets/css/login.css';
 import 'flowbite';
@@ -17,10 +17,11 @@ function App() {
       <NextUIProvider>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/chat" element={<HomePage />} />
-          <Route path="/pro" element={<ProHomePage />}/>
+          <Route path="/chat" element={<HomePage type="Chat" />} />
+          <Route path="/pro" element={<HomePage type="Pro" />} />
+          <Route path="/enterprise" element={<HomePage type="Enterprise" />} />
           <Route path="/upgrade" element={<Packages />} />
-          <Route path="/login" element={<Login />}/>
+          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
       </NextUIProvider>
